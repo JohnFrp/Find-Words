@@ -1,6 +1,7 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { FormsModule } from '@angular/forms';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-word-finder',
@@ -21,21 +22,26 @@ export class WordFinderComponent {
     this.adjustColumnCount();
   }
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
   ngOnInit() {
-    this.adjustColumnCount(); // Adjust columns initially based on the screen size
+    if (isPlatformBrowser(this.platformId)) {
+      this.adjustColumnCount();
+    }
   }
 
   adjustColumnCount() {
-    const screenWidth = window.innerWidth;
-
-    if (screenWidth < 576) {
-      this.numColumns = 3; // Extra small screens (phones)
-    } else if (screenWidth < 768) {
-      this.numColumns = 4; // Small screens (tablets)
-    } else if (screenWidth < 992) {
-      this.numColumns = 5; // Medium screens (small laptops)
-    } else {
-      this.numColumns = 10; // Large screens (desktops)
+    if (typeof window !== 'undefined') {
+      const screenWidth = window.innerWidth;
+  
+      if (screenWidth < 576) {
+        this.numColumns = 3; // Extra small screens (phones)
+      } else if (screenWidth < 768) {
+        this.numColumns = 4; // Small screens (tablets)
+      } else if (screenWidth < 992) {
+        this.numColumns = 5; // Medium screens (small laptops)
+      } else {
+        this.numColumns = 10; // Large screens (desktops)
+      }
     }
   }
 
