@@ -1,0 +1,115 @@
+h1 {
+    color: yellow; /* Text color */
+    font-weight: bold; /* Bold text */
+    font-size: 2em; /* Adjust the size as needed */
+    text-align: center; /* Center text horizontally */
+    padding-top: 0px; /* Space above the text */
+    
+    /* 3D effect using text-shadow */
+    text-shadow: 
+        1px 1px 0 red, /* First shadow layer */
+        2px 2px 0 green, /* Second shadow layer for a thicker border */
+        3px 3px 0 blue, /* Third shadow layer for depth */
+        4px 4px 0 yellow; /* Additional shadow layer for more depth */
+}
+
+#wordLength option, select{
+  color: red; /* Text color */
+    font-weight: bold; /* Bold text */
+    font-size: 1em; /* Adjust the size as needed */
+    text-align: center; /* Center text horizontally */
+    margin-top: 20px;
+    padding-right: 10px; 
+    padding-left: 10px;
+    /* 3D effect using text-shadow */
+    text-shadow: 
+        1px 1px 0 #000, /* First shadow layer */
+        2px 2px 0 #000, /* Second shadow layer for a thicker border */
+       
+}
+
+label {
+    color: hsl(77, 100%, 50%); /* Text color */
+    font-weight: bold; /* Bold text */
+    font-size: 1.5em; /* Adjust the size as needed */
+    text-align: center; /* Center text horizontally */
+    padding-right: 20px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    
+    
+    /* 3D effect using text-shadow */
+    text-shadow: 
+        1px 1px 0 #000, /* First shadow layer */
+        2px 2px 0 #000, /* Second shadow layer for a thicker border */
+        3px 3px 0 #000, /* Third shadow layer for depth */
+        4px 4px 0 #000; 
+}
+
+.btn{
+    color: hwb(0 0% 0%); /* Text color */
+    font-weight: bold; /* Bold text */
+    font-size: 1em; /* Adjust the size as needed */
+    text-align: center; /* Center text horizontally */
+    padding: 5px;
+    
+    /* 3D effect using text-shadow */
+    text-shadow: 
+        1px 1px 0 #000, /* First shadow layer */
+        2px 2px 0 #000, /* Second shadow layer for a thicker border */
+        3px 3px 0 #000, /* Third shadow layer for depth */
+       
+}
+  
+ 
+ 
+  
+  .table-bordered td.custom-background {        
+    background-color: hsl(68, 100%, 50%);
+    color: hwb(0 0% 0%); /* Text color */
+    font-weight: bold; /* Bold text */
+    font-size: 1em; /* Adjust the size as needed */
+    text-align: center; /* Center text horizontally */
+    padding: 5px;  
+    
+  }
+
+  textarea#inputText {
+    width: 100%; /* Full width relative to parent */
+    height: auto;
+    min-height: 150px; /* Set minimum height for smaller screens */
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #E1D7B7;
+    color: blue;
+
+}
+
+/* Media queries to handle different screen sizes */
+@media (min-width: 768px) {
+    textarea#inputText {
+        min-height: 200px; /* Adjust min height for tablets and up */
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    textarea#inputText {
+        min-height: 250px; /* Adjust min height for desktops and up */
+        width: 100%;
+    }
+}
+
+.row{
+  width: 75%;
+}
+
+
+ 
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: top; /* Centers items vertically as well */
+    height: 100vh;
+    background: radial-gradient(circle, #E1D7B7 10%, #000 70%);
+}

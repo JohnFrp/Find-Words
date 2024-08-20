@@ -1,0 +1,36 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="row w-100">
+    <div class="col-12 col-md-10 col-lg-8 mx-auto">
+      <div class="form-group">
+        <h1 class="text-center">Word Finders</h1>
+        <label for="inputText">Input Text:</label>
+        <p></p>  
+        <textarea id="inputText" class="form-control" [(ngModel)]="inputText" style="height: auto; min-height: 250px;"></textarea>
+         
+      </div>
+
+      <div class="form-group mt-3">
+        <label for="wordLength">Choose Word Length:</label>          
+        <select id="wordLength" class="form-control" [(ngModel)]="wordLength">
+          <option *ngFor="let length of wordLengths" [value]="length">{{length}}</option>
+        </select>
+        <p></p>  
+      </div>
+
+      <button class="btn btn-primary mt-3 w-100" (click)="generateUniqueWords()">Generate</button>
+      <p></p>  
+
+      <div class="result mt-5" *ngIf="uniqueWords.length > 0">
+        <div class="table-responsive">
+          <table class="table table-bordered text-center">
+            <tr *ngFor="let row of splitIntoRows(uniqueWords, numColumns)">
+              <td *ngFor="let word of row" [ngClass]="{'custom-background': true, 'custom-text': true}">
+                {{word}}
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
